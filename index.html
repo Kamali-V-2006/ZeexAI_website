@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeex AI Clone</title>
+    <link rel="icon" href="img/logo.png">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <!-- header placeholder-->
+    <div id="header"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>AI. DATA. IMPACT.</h1>
+            <h2>TRANSFORMING INSIGHTS INTO ACTION</h2>
+            <p>
+                From prevention to performance, Zeex AI turns everyday data into 
+                actionable intelligence for safer, smarter management.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary">Get a Demo</button>
+                <button class="secondary">Explore Solutions</button>
+            </div>
+        </div>
+        <!-- VIDEO CARD (updated) -->
+        <!-- VIDEO CARD -->
+        <div class="video-card">
+    
+        <!-- Placeholder Image -->
+        <img src="img/logo.png" class="video-thumb" id="videoThumb">
+
+        <!-- Play Button -->
+        <div class="play-btn" id="playBtn">▶</div>
+
+            <!-- Video Player -->
+            <video id="mainVideo" class="main-video">
+                <source src="video/zeex_video.mp4" type="video/mp4">
+            </video>
+
+            <!-- Video Controls -->
+            <div class="video-controls" id="videoControls">
+                <button id="pauseBtn">⏸</button>
+                <input type="range" id="progressBar" value="0" min="0" max="100">
+                <span id="timeLabel">00:00</span>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- section-header 1-->
+    <div id="section-header1"
+        data-title="Transforming Safety & Workflows with AI + Data"
+        data-word1="CORE"
+        data-word2="FEATURES"
+        data-description="Zeex AI bridges safety and efficiency, delivering predictive insights 
+            that secure environments and streamline operations.">
+    </div>
+    <section class="features-dark">
+        <div class="features-grid-dark">
+
+            <div class="feature-card-dark">
+                <div class="icon-dark">🧠</div>
+                <h3>AI-Powered Automation</h3>
+                <p>
+                    Leverage cutting-edge machine learning to automate
+                    workflows and accelerate decisions.
+                </p>
+            </div>
+
+            <div class="feature-card-dark">
+                <div class="icon-dark">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>
+                    Process millions of data points in seconds using
+                    highly optimized AI infrastructure.
+                </p>
+            </div>
+
+            <div class="feature-card-dark">
+                <div class="icon-dark">🛡️</div>
+                <h3>Enterprise Security</h3>
+                <p>
+                    Military-grade encryption and compliance to keep 
+                    your data fully protected.
+                </p>
+            </div>
+
+            <div class="feature-card-dark">
+                <div class="icon-dark">📈</div>
+                <h3>Smart Insights</h3>
+                <p>
+                    Turn raw data into powerful intelligence with 
+                    predictive analytics and insights.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <div class="explore-wrapper">
+        <a href="#" class="explore-btn">
+            Explore All Features 
+            <span class="arrow">→</span>
+        </a>
+    </div>
+    <!--section-header 2-->
+    <div id="section-header2"
+        data-title="Industry Services"
+        data-word1="AI Security for "
+        data-word2="Every Environment"
+        data-description="Transforming workplaces and cities with intelligent safety and 
+        management powered by AI and data.">
+    </div>
+
+    <section id="vertical-slider" class="vertical-slider">
+        <button class="vs-arrow vs-prev" aria-label="Previous slide">▲</button>
+        <div class="vs-viewport">
+            <!-- Slide 1 -->
+            <article class="vs-slide" data-index="0" aria-hidden="false">
+            <div class="vs-left">
+                <h2>Residential Security</h2>
+                <p>Comprehensive AI-powered security systems designed specifically for homes and residential properties. Our service integrates seamlessly with your existing smart home setup, providing unparalleled protection for your family and property.</p>
+                <a class="vs-link" href="#">Explore solution →</a>
+            </div>
+            <figure class="vs-right">
+                <img src="img/residential_security.png" alt="Retail security image">
+            </figure>
+            </article>
+
+            <!-- Slide 2 -->
+            <article class="vs-slide" data-index="1" aria-hidden="true">
+            <div class="vs-left">
+                <h2>Commercial Surveillance</h2>
+                <p>Enterprise-grade security solutions designed for businesses of all sizes. Our commercial surveillance system combines AI analytics with scalable infrastructure to protect your assets, employees, and customers around the clock.</p>
+                <a class="vs-link" href="#">Explore solution →</a>
+            </div>
+            <figure class="vs-right">
+                <img src="img/commercial_surveillance.png" alt="Bank security image">
+            </figure>
+            </article>
+
+            <!-- Slide 3 -->
+            <article class="vs-slide" data-index="2" aria-hidden="true">
+            <div class="vs-left">
+                <h2>Public Safety</h2>
+                <p>Advanced surveillance solutions for public spaces that enhance safety while respecting privacy. Our public safety systems help identify potential threats before they escalate, enabling proactive security measures.</p>
+                <a class="vs-link" href="#">Explore solution →</a>
+            </div>
+            <figure class="vs-right">
+                <img src="img/public_safety.png" alt="Industry image">
+            </figure>
+            </article>
+
+            <!-- Slide 4 -->
+            <article class="vs-slide" data-index="3" aria-hidden="true">
+            <div class="vs-left">
+                <h2>Retail Security</h2>
+                <p>Specialized AI surveillance for retail environments that prevents theft while enhancing customer experience. Our retail security solutions provide real-time analytics and automated threat detection.</p>
+                <a class="vs-link" href="#">Explore solution →</a>
+            </div>
+            <figure class="vs-right">
+                <img src="img/retial_security.png" alt="Traffic image">
+            </figure>
+            </article>
+
+            <!-- Slide 5 -->
+            <article class="vs-slide" data-index="4" aria-hidden="true">
+            <div class="vs-left">
+                <h2>Industrial Security</h2>
+                <p>Robust security solutions for industrial facilities and manufacturing plants. Our industrial security systems ensure worker safety and protect valuable equipment and processes.</p>
+                <a class="vs-link" href="#">Explore solution →</a>
+            </div>
+            <figure class="vs-right">
+                <img src="img/industrial_security.png" alt="Smart city image">
+            </figure>
+            </article>
+
+            <!-- Slide 6 -->
+            <article class="vs-slide" data-index="5" aria-hidden="true">
+            <div class="vs-left">
+                <h2>Traffic Management</h2>
+                <p>Intelligent traffic monitoring and management systems for cities and highways. Our traffic solutions reduce congestion, improve safety, and provide real-time traffic analytics.</p>
+                <a class="vs-link" href="#">Explore solution →</a>
+            </div>
+            <figure class="vs-right">
+                <img src="img/traffic_management.png" alt="Corporate security image">
+            </figure>
+            </article>
+        </div>
+        <button class="vs-arrow vs-next" aria-label="Next slide">▼</button>
+    </section>
+
+
+    <div class="services-wrapper">
+        <a href="#" class="services-btn">
+            View all services
+            <span class="arrow">→</span>
+        </a>
+    </div>
+    <!-- section-header 3-->
+    <div id="section-header3"
+        data-title="Our Methodology"
+        data-word1="Precision"
+        data-word2="Implementation"
+        data-word3="Process"
+        data-description="A meticulously crafted 5-phase approach ensuring flawless integration of our AI surveillance solutions.">
+    </div>
+    <section class="phases-section">
+        <h2 class="phase-title">Implementation Phases</h2>
+
+        <div class="phase-container">
+
+            <!-- Phase 1 -->
+            <div class="phase-card">
+            <div class="phase-icon">
+                <img src="https://img.icons8.com/ios-filled/100/00d4ff/city-buildings.png" />
+            </div>
+            <h3>Discovery Audit</h3>
+            <p>Analyze current setup and define surveillance goals.</p>
+            <span class="phase-number">PHASE 01</span>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase-card">
+            <div class="phase-icon">
+                <img src="https://img.icons8.com/ios-filled/100/00d4ff/monitor.png" />
+            </div>
+            <h3>Solution Architecture</h3>
+            <p>Design a tailored, AI-ready surveillance blueprint.</p>
+            <span class="phase-number">PHASE 02</span>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-card">
+            <div class="phase-icon">
+                <img src="https://img.icons8.com/?size=100&id=23281&format=png&color=00d4ff" />
+            </div>
+            <h3>Precision Deployment</h3>
+            <p>Hardware/software installation with zero downtime.</p>
+            <span class="phase-number">PHASE 03</span>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase-card">
+            <div class="phase-icon">
+                <img src="https://img.icons8.com/ios-filled/100/00d4ff/shield.png" />
+            </div>
+            <h3>Validation Testing</h3>
+            <p>Test performance, accuracy, and system stability.</p>
+            <span class="phase-number">PHASE 04</span>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase-card">
+            <div class="phase-icon">
+                <img src="https://img.icons8.com/ios-filled/100/00d4ff/clock.png" />
+            </div>
+            <h3>Ongoing Excellence</h3>
+            <p>24/7 monitoring, updates, and support.</p>
+            <span class="phase-number">PHASE 05</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- cta-section placeholder-->
+
+    <div id="cta-box"
+        data-title="Ready to Enhance Your Security?"
+        data-description="Our team is ready to help you implement the perfect security solution for your needs."
+        data-button="Request a Consultation"
+        data-link="contact.html">
+    </div>
+
+    <section class="blog-section">
+    <h2 class="blog-title">Latest Insights</h2>
+    <h4 class="blog-subtitle">Stay updated with the latest in AI security technology</h4>
+
+    <div class="carousel-wrapper">
+        <button class="nav-btn left" id="prevBtn"></button>
+
+        <div class="carousel" id="carousel">
+
+            <!-- CARD 1 -->
+            <div class="blog-card">
+                <img src="img/card1.png" class="blog-img">
+                <span class="blog-meta">April 15, 2025 • <span class="tag tech">Technology</span></span>
+                <h3>AI Advancements in Modern Surveillance</h3>
+                <p>Explore how AI is revolutionizing modern surveillance systems and improving security outcomes.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="blog-card">
+                <img src="img/card2.png" class="blog-img">
+                <span class="blog-meta">April 08, 2025 • <span class="tag privacy">Privacy</span></span>
+                <h3>Balancing Privacy with Security in AI Surveillance</h3>
+                <p>How modern AI-powered security systems protect privacy while enhancing safety measures.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="blog-card">
+                <img src="img/card3.png" class="blog-img">
+                <span class="blog-meta">March 25, 2025 • <span class="tag tech">Technology</span></span>
+                <h3>Facial Recognition: Myths & Realities</h3>
+                <p>Debunking common myths about facial recognition technology and explaining how it...</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+            <!-- CARD 4 -->
+            <div class="blog-card">
+                <img src="img/card4.png" class="blog-img">
+                <span class="blog-meta">March 18, 2025 • <span class="tag tech">Residential</span></span>
+                <h3>Integrating AI Security into Your Smart Home</h3>
+                <p>A comprehensive guide on how to enhance your smart homw with AI security solution.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="blog-card">
+                <img src="img/card5.png" class="blog-img">
+                <span class="blog-meta">April 01, 2025 • <span class="tag privacy">Trends</span></span>
+                <h3>5 Future Trends in AI Security for 2025</h3>
+                <p>Discover emerging trends in AI security technology and how they will shape the future of surveillance.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="blog-card">
+                <img src="img/card6.png" class="blog-img">
+                <span class="blog-meta">March 10, 2025 • <span class="tag tech">Case Study</span></span>
+                <h3>Case Study: How ZeexAI Protected a Major Retail Chain</h3>
+                <p>An in-depth look at how our AI surveillance solutions reduced theft by 65% for a national retail.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <button class="nav-btn right" id="nextBtn"></button>
+    </div>
+</section>
+
+    <!-- section-header 4-->
+    <div id="section-header4"
+        data-title="Trusted Partnerships"
+        data-word1="Supported by "
+        data-word2="Industry Leaders"
+        data-description="Our technology is recognized and supported by premier institutions and 
+            industry leaders.">
+    </div>
+
+    <section class="partner-logos">
+
+        <div class="logo-card">
+            <img src="img/iitm.png" class="logo-img" />
+            
+        </div>
+
+        <div class="logo-card">
+            <img src="img/nirmaan.png" class="logo-img" />
+            
+        </div>
+
+        <div class="logo-card">
+            <img src="img/aws.png" class="logo-img" />
+            
+        </div>
+
+        <div class="logo-card">
+            <img src="img/nvidia.png" class="logo-img" />
+            
+        </div>
+
+    </section>
+    <!-- footer placeholder-->
+    <div id="footer"></div>
+
+    <script src="dist/scripts.js"></script>
+    <script>
+        loadSectionHeader("section-header1");
+        loadSectionHeader("section-header2");
+        loadSectionHeader("section-header3");
+        loadSectionHeader("section-header4");
+        loadCTA("cta-box");
+    </script>    
+</body>
+</html>

@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeex AI - Advanced AI Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --deep-blue: #0A0A2A;
+            --cyber-blue: #0066FF;
+            --neon-cyan: #00F7FF;
+            --electric-teal: #00CCCC;
+            --cyber-white: #F0F4FF;
+            --dark-bg: #050516;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--cyber-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--cyber-blue), var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 42, 0.9), rgba(5, 5, 22, 0.95)),
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--cyber-white), var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            animation: textGlow 3s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(240, 244, 255, 0.8);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--cyber-blue), var(--electric-teal));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.5);
+            animation: none;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .cta-button:hover::after {
+            left: 100%;
+        }
+
+        /* Background Animation */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(0, 247, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 70px;
+            height: 70px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .shape:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(0, 247, 255, 0.6), 0 0 30px rgba(0, 102, 255, 0.4);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 102, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 102, 255, 0);
+            }
+        }
+
+        /* Solutions Section */
+        .solutions {
+            padding: 8rem 2rem;
+            background: var(--deep-blue);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--cyber-blue), var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: rgba(240, 244, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .solution-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .solution-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 247, 255, 0.3);
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 247, 255, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .solution-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--cyber-blue), var(--electric-teal));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.4s ease;
+        }
+
+        .solution-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .solution-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--cyber-white);
+        }
+
+        .solution-card p {
+            color: rgba(240, 244, 255, 0.7);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .solution-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .solution-card.active .card-details {
+            max-height: 200px;
+        }
+
+        .learn-more {
+            color: var(--neon-cyan);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .learn-more i {
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover .learn-more i {
+            transform: translateX(5px);
+        }
+
+        /* Industries Section */
+        .industries {
+            padding: 8rem 2rem;
+            background: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 247, 255, 0.05) 0%, transparent 20%);
+        }
+
+        .industries-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+        }
+
+        .industry-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .industry-tab {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .industry-tab.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .industry-tab:hover {
+            transform: translateX(5px);
+            border-color: rgba(0, 102, 255, 0.5);
+        }
+
+        .industry-tab.active {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(0, 204, 204, 0.1));
+            border-color: var(--cyber-blue);
+        }
+
+        .industry-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--cyber-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .industry-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .industry-panel {
+            display: none;
+        }
+
+        .industry-panel.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .industry-panel h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--cyber-white);
+        }
+
+        .industry-panel p {
+            color: rgba(240, 244, 255, 0.7);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .industry-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature i {
+            color: var(--neon-cyan);
+            font-size: 1.2rem;
+        }
+
+        /* Tech Deep Dive */
+        .tech-deep-dive {
+            padding: 8rem 2rem;
+            background: var(--deep-blue);
+            background-image: 
+                linear-gradient(45deg, rgba(0, 102, 255, 0.05) 0%, transparent 50%),
+                linear-gradient(-45deg, rgba(0, 247, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-toggle {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-toggle:hover {
+            border-color: var(--cyber-blue);
+        }
+
+        .tech-toggle h3 {
+            font-size: 1.5rem;
+            color: var(--cyber-white);
+        }
+
+        .tech-toggle i {
+            color: var(--neon-cyan);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        .tech-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: rgba(5, 5, 22, 0.5);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .tech-content.active {
+            max-height: 600px;
+        }
+
+        .integration-steps {
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--cyber-blue), var(--electric-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--cyber-white);
+        }
+
+        .step p {
+            color: rgba(240, 244, 255, 0.7);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 2rem;
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 247, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .testimonial-carousel {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            display: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: rgba(240, 244, 255, 0.9);
+            position: relative;
+        }
+
+        .testimonial-text::before, .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--neon-cyan);
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        .testimonial-text::before {
+            top: -20px;
+            left: -10px;
+        }
+
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cyber-blue), var(--electric-teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: var(--cyber-white);
+        }
+
+        .author-info p {
+            color: rgba(240, 244, 255, 0.7);
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(240, 244, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--neon-cyan);
+            transform: scale(1.2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: 
+                linear-gradient(135deg, var(--deep-blue), var(--dark-bg)),
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: transpa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--cyber-white);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: rgba(240, 244, 255, 0.8);
+        }
+
+        .demo-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--cyber-blue), var(--electric-teal));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        .demo-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.6);
+            animation: none;
+        }
+
+        .demo-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .demo-button:hover::after {
+            left: 100%;
+        }
+
+        .cta-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(0, 247, 255, 0.3);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-blue);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(0, 102, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(0, 247, 255, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--cyber-white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(240, 244, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--neon-cyan);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyber-white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--cyber-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: rgba(240, 244, 255, 0.5);
+        }
+
+        /* Scroll Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .industries-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .industry-tabs {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!-- NAVBAR -->
+    <!-- header placeholder-->
+    <div id="header"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>AI-Powered Surveillance & Data Analytics</h1>
+            <p>Transform your security operations with predictive AI that anticipates threats, optimizes workflows, and delivers actionable insights in real-time.</p>
+            <a href="#" class="cta-button">Explore Our Solutions <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions">
+        <div class="section-title">
+            <h2>Advanced AI Solutions</h2>
+            <p>Comprehensive AI-powered solutions designed to enhance security, optimize operations, and drive intelligent decision-making.</p>
+        </div>
+        <div class="solutions-grid">
+            <!-- Solution Card 1 -->
+            <div class="solution-card fade-in">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Predictive Safety Monitoring">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Predictive Safety Monitoring</h3>
+                <p>Anticipate security threats before they happen with our advanced predictive analytics engine.</p>
+                <div class="card-details">
+                    <p>Real-time threat assessment • Behavioral pattern analysis • Proactive alert system</p>
+                </div>
+                <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <!-- Solution Card 2 -->
+            <div class="solution-card fade-in">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWl8ZW58MHx8MHx8fDA%3D" alt="AI-Driven Work Management">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3>AI-Driven Work Management</h3>
+                <p>Optimize security operations with intelligent task allocation and resource management.</p>
+                <div class="card-details">
+                    <p>Automated scheduling • Resource optimization • Performance analytics</p>
+                </div>
+                <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <!-- Solution Card 3 -->
+            <div class="solution-card fade-in">
+                <div class="card-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1661420386736-df3569904b5d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHZpc3VhbCUyMGRhdGF8ZW58MHx8MHx8fDA%3D" alt="AI-Visual Data Analytics">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>AI-Visual Data Analytics</h3>
+                <p>Transform visual data into actionable intelligence with our computer vision technology.</p>
+                <div class="card-details">
+                    <p>Object recognition • Anomaly detection • Pattern identification</p>
+                </div>
+                <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <!-- Solution Card 4 -->
+            <div class="solution-card fade-in">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1742801672869-eeae07416cf3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGltZSUyMGFsZXJ0c3xlbnwwfHwwfHx8MA%3D%3D" alt="Real-Time Alerts & Insights">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <h3>Real-Time Alerts & Insights</h3>
+                <p>Receive instant notifications and deep insights into security events as they happen.</p>
+                <div class="card-details">
+                    <p>Instant alerting • Contextual insights • Multi-channel notifications</p>
+                </div>
+                <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries">
+        <div class="section-title">
+            <h2>Industry Solutions</h2>
+            <p>Tailored AI solutions designed to address the unique security challenges across different industries.</p>
+        </div>
+        <div class="industries-container">
+            <div class="industry-tabs">
+                <div class="industry-tab slide-in-left active" data-industry="retail">
+                    <div class="industry-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div>
+                        <h4>Retail</h4>
+                        <p>Loss prevention & customer analytics</p>
+                    </div>
+                </div>
+                <div class="industry-tab slide-in-left" data-industry="traffic">
+                    <div class="industry-icon">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <div>
+                        <h4>Traffic</h4>
+                        <p>Flow optimization & incident detection</p>
+                    </div>
+                </div>
+                <div class="industry-tab slide-in-left" data-industry="corporate">
+                    <div class="industry-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div>
+                        <h4>Corporate/Residential</h4>
+                        <p>Access control & perimeter security</p>
+                    </div>
+                </div>
+                <div class="industry-tab slide-in-left" data-industry="industrial">
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div>
+                        <h4>Industrial</h4>
+                        <p>Safety compliance & asset protection</p>
+                    </div>
+                </div>
+            </div>
+            <div class="industry-content">
+                <div class="industry-panel active" id="retail-panel">
+                    <h3>Retail Security & Analytics</h3>
+                    <p>Our AI solutions help retail businesses prevent theft, optimize operations, and enhance customer experiences through advanced video analytics and predictive modeling.</p>
+                    <div class="industry-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Theft prevention with behavior analysis</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Customer flow optimization</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Inventory management automation</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Personalized shopping experiences</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="industry-panel" id="traffic-panel">
+                    <h3>Traffic Management & Safety</h3>
+                    <p>Intelligent traffic monitoring systems that detect incidents, optimize flow, and enhance road safety through real-time AI analysis of traffic patterns.</p>
+                    <div class="industry-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Real-time incident detection</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Traffic flow optimization</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Predictive congestion modeling</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Automated violation detection</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="industry-panel" id="corporate-panel">
+                    <h3>Corporate & Residential Security</h3>
+                    <p>Comprehensive access control and perimeter monitoring solutions that leverage AI to identify threats and ensure the safety of people and property.</p>
+                    <div class="industry-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Smart access control systems</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Perimeter intrusion detection</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Visitor management automation</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Emergency response coordination</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="industry-panel" id="industrial-panel">
+                    <h3>Industrial Safety & Monitoring</h3>
+                    <p>AI-powered surveillance systems that ensure compliance with safety protocols, protect valuable assets, and prevent accidents in industrial environments.</p>
+                    <div class="industry-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Safety compliance monitoring</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Asset protection & tracking</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Hazard detection & prevention</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Operational efficiency analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Deep Dive -->
+    <section class="tech-deep-dive">
+        <div class="tech-container">
+            <div class="section-title">
+                <h2>Technology Deep Dive</h2>
+                <p>Explore how Zeex AI integrates with your existing infrastructure to deliver powerful security intelligence.</p>
+            </div>
+            <div class="tech-toggle">
+                <h3>Integration Process & Technical Specifications</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="tech-content">
+                <div class="integration-steps">
+                    <div class="step fade-in">
+                        <div class="step-number">1</div>
+                        <h4>System Assessment</h4>
+                        <p>Comprehensive analysis of your current security infrastructure and requirements.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-number">2</div>
+                        <h4>Custom Solution Design</h4>
+                        <p>Tailored AI models designed to address your specific security challenges.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-number">3</div>
+                        <h4>Seamless Integration</h4>
+                        <p>Implementation with minimal disruption to your existing operations.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <div class="step-number">4</div>
+                        <h4>Training & Optimization</h4>
+                        <p>AI model training and continuous optimization for peak performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>Trusted by Industry Leaders</h2>
+            <p>See how organizations are transforming their security operations with Zeex AI solutions.</p>
+        </div>
+        <div class="testimonial-carousel">
+            <div class="testimonial-slide active">
+                <p class="testimonial-text">"Zeex AI has revolutionized our retail security operations. The predictive analytics have helped us reduce theft by 67% while improving customer experience through better traffic flow management."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JS</div>
+                    <div class="author-info">
+                        <h4>Jennifer Smith</h4>
+                        <p>Security Director, Retail Chain</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"Implementing Zeex AI across our corporate campuses has given us unprecedented visibility into security threats. The real-time alerts have prevented multiple potential incidents."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Michael Rodriguez</h4>
+                        <p>CTO, Fortune 500 Company</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"The traffic management solution from Zeex AI has reduced congestion by 42% in our city while improving emergency response times. The AI-driven insights are invaluable."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">TD</div>
+                    <div class="author-info">
+                        <h4>Thomas Davis</h4>
+                        <p>City Transportation Director</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <div class="carousel-dot active" data-slide="0"></div>
+                <div class="carousel-dot" data-slide="1"></div>
+                <div class="carousel-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-particles" id="ctaParticles"></div>
+        <div class="cta-container">
+            <h2>Ready to Transform Your Security Operations?</h2>
+            <p>See how Zeex AI can help your organization anticipate threats, optimize resources, and make data-driven decisions.</p>
+            <a href="#" class="demo-button">Request a Live Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- footer placeholder-->
+    <div id="footer"></div>
+
+    <script>
+        
+
+        // Solution Cards Interaction
+        document.querySelectorAll('.solution-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        // Industry Tabs
+        document.querySelectorAll('.industry-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.industry-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Get industry type
+                const industry = this.getAttribute('data-industry');
+                
+                // Hide all panels
+                document.querySelectorAll('.industry-panel').forEach(panel => {
+                    panel.classList.remove('active');
+                });
+                
+                // Show selected panel
+                document.getElementById(`${industry}-panel`).classList.add('active');
+            });
+        });
+
+        // Tech Deep Dive Toggle
+        document.querySelector('.tech-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.tech-content').classList.toggle('active');
+            
+            // Animate steps when opened
+            if (this.classList.contains('active')) {
+                setTimeout(() => {
+                    document.querySelectorAll('.step').forEach((step, index) => {
+                        setTimeout(() => {
+                            step.classList.add('visible');
+                        }, index * 200);
+                    });
+                }, 300);
+            }
+        });
+
+        // Testimonial Carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Auto-advance carousel
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+
+        // CTA Particles
+        const ctaParticles = document.getElementById('ctaParticles');
+        for (let i = 0; i < 15; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Random position and size
+            const size = Math.random() * 10 + 5;
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            const delay = Math.random() * 5;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${left}%`;
+            particle.style.top = `${top}%`;
+            particle.style.animationDelay = `${delay}s`;
+            
+            ctaParticles.appendChild(particle);
+        }
+
+        // Add floating shapes to hero
+        const floatingShapes = document.querySelector('.floating-shapes');
+        for (let i = 0; i < 8; i++) {
+            const shape = document.createElement('div');
+            shape.classList.add('shape');
+            
+            // Random position and size
+            const size = Math.random() * 80 + 20;
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            const delay = Math.random() * 10;
+            
+            shape.style.width = `${size}px`;
+            shape.style.height = `${size}px`;
+            shape.style.left = `${left}%`;
+            shape.style.top = `${top}%`;
+            shape.style.animationDelay = `${delay}s`;
+            
+            floatingShapes.appendChild(shape);
+        }
+
+        // Scroll animations
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .solution-card, .industry-tab, .step');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initial check
+        checkVisibility();
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkVisibility);
+    </script>
+    <script src="modules/module.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

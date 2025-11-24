@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "none",
+    "outFile": "./dist/scripts.js",
+    "strict": false,
+    "sourceMap": false,
+    "allowJs": false,
+    "removeComments": true
+  },
+  "include": [
+    "./scripts.ts"
+  ]
+}
